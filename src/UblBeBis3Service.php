@@ -334,6 +334,7 @@ class UblBeBis3Service
             } else {
                 // Check if the date is in the past or today
                 $today = new \DateTime('today');
+                $issueDateObj->setTime(0,0); // Reset time to match $today
                 if ($issueDateObj > $today) {
                     $errors[] = 'Invoice date cannot be in the future';
                 }
